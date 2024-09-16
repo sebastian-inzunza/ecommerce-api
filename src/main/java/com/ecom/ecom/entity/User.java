@@ -3,6 +3,8 @@ import com.ecom.ecom.enums.UserRole;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -26,6 +28,8 @@ public class User {
     private String password;
     private String name;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false) // Esto es opcional, pero puede ayudar a evitar valores nulos en la columna
     private UserRole role;
 
 
